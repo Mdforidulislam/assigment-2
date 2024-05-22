@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { orderServices } from "./order.service";
 import OrderZodSchema from "./order.validation";
 
-// Create a single Order
+// make single order form  customer 
 const createOrder = async (req: Request, res: Response) => {
   try {
     const orderData = OrderZodSchema.parse(req.body);
@@ -21,7 +21,7 @@ const createOrder = async (req: Request, res: Response) => {
   }
 };
 
-// Get all Orders
+// Get all the order form the database 
 const getAllOrders = async (req: Request, res: Response) => {
   try {
     const result = await orderServices.getAllOrdersFromBD();
@@ -39,7 +39,7 @@ const getAllOrders = async (req: Request, res: Response) => {
   }
 };
 
-// Get single Order by email
+// Get single order by emial  from the server 
 const getSingleOrder = async (req: Request, res: Response) => {
   try {
     const email = req.query.email as string;

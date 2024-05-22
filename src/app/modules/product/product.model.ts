@@ -1,6 +1,8 @@
 import { Schema, model } from "mongoose";
 import { TInventory, TProduct, TVariants } from "./product.interface";
 
+//  deleartion the type here TVariants
+
 const variantsSchema = new Schema<TVariants>({
   type: {
     type: String,
@@ -12,6 +14,9 @@ const variantsSchema = new Schema<TVariants>({
   },
 });
 
+// declaaration the TInverortyt system 
+
+
 const inventorySchema = new Schema<TInventory>({
   quantity: {
     type: Number,
@@ -22,6 +27,9 @@ const inventorySchema = new Schema<TInventory>({
     required: true,
   },
 });
+
+
+//  type declaration the form the server 
 
 const productSchema = new Schema<TProduct>({
   name: {
@@ -64,6 +72,9 @@ productSchema.pre("find", function (next) {
   this.find({ isDelete: { $ne: true } });
   next();
 });
+
+
+//  schema declaration
 
 productSchema.pre("findOne", function (next) {
   this.findOne({ isDelete: { $ne: true } });

@@ -1,6 +1,9 @@
 import { Schema, model } from "mongoose";
 import { TOrders } from "./order.interface";
 
+
+// delare schema modules for product 
+
 const OrderSchema = new Schema<TOrders>(
   {
     email: { type: String, required: true },
@@ -9,7 +12,7 @@ const OrderSchema = new Schema<TOrders>(
     quantity: { type: Number, required: true },
   },
   {
-    timestamps: true, // Adds createdAt and updatedAt timestamps
+    timestamps: true, 
   },
 );
 

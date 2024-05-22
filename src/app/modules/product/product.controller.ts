@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import productZodSchema from "./product.validation";
 import { productServices } from "./product.service";
 
-// create a single product
+// create singl order here 
 const createProduct = async (req: Request, res: Response) => {
   try {
     const { product } = req.body;
@@ -18,12 +18,13 @@ const createProduct = async (req: Request, res: Response) => {
     res.status(500).json({
       success: false,
       message: "Something went wrong",
-      error: error, // Only send the error message to the client, not the entire error object
+      error: error, 
     });
   }
 };
 
-//get all products:
+
+//get all th product hre for show users
 const getAllProducts = async (req: Request, res: Response) => {
   try {
     const result = await productServices.getAllProductsFromBD();
@@ -41,7 +42,7 @@ const getAllProducts = async (req: Request, res: Response) => {
   }
 };
 
-//get single Product:
+//get  single order for serachirng by userhs
 
 const getSignleProduct = async (req: Request, res: Response) => {
   try {
@@ -62,7 +63,7 @@ const getSignleProduct = async (req: Request, res: Response) => {
   }
 };
 
-//update a single product:
+//update  the sing order by cusomter 
 const updateSingleProduct = async (req: Request, res: Response) => {
   try {
     const { product } = req.body;
@@ -82,10 +83,12 @@ const updateSingleProduct = async (req: Request, res: Response) => {
     res.status(500).json({
       success: false,
       message: "Something went wrong",
-      error: error, // Only send the error message to the client, not the entire error object
+      error: error, 
     });
   }
 };
+
+//   deleted the product form the database here 
 
 const deleteProduct = async (req: Request, res: Response) => {
   try {
@@ -104,6 +107,8 @@ const deleteProduct = async (req: Request, res: Response) => {
     });
   }
 };
+
+//  searhc the data here i need to serach database 
 
 const searchProducts = async (req: Request, res: Response) => {
   try {
@@ -130,6 +135,7 @@ const searchProducts = async (req: Request, res: Response) => {
     });
   }
 };
+
 
 export const productControllers = {
   createProduct,

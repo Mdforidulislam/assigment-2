@@ -2,7 +2,7 @@ import { ProductModel } from "../product/product.model";
 import { TOrders } from "./order.interface";
 import { OrderModel } from "./order.model";
 
-//create a single Order
+//create a crate order system hre 
 export const createOrderIntoDB = async (
   orderData: TOrders,
 ): Promise<TOrders> => {
@@ -41,7 +41,7 @@ export const createOrderIntoDB = async (
   }
 };
 
-//  Retrieve a List of All Orders
+//  get all the restirve order here 
 
 const getAllOrdersFromBD = async () => {
   try {
@@ -52,7 +52,7 @@ const getAllOrdersFromBD = async () => {
   }
 };
 
-// Retrieve a single Order:
+// Retrieve get single order 
 
 const getSignleOrderFromBD = async (email: string) => {
   try {
